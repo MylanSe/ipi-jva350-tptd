@@ -18,7 +18,7 @@ public class EntrepriseTest {
         LocalDate d = LocalDate.of(2022, 12, 20);
         LocalDate debut = LocalDate.of(2022, 10, 10);
         LocalDate fin = LocalDate.of(2023, 02, 15);
-        // When : 
+        // When :
         boolean res = Entreprise.estDansPlage(d, debut, fin);
         // Then :
         Assertions.assertEquals(true, res, "le 20 décembre 2022 est compris entre le 10 octobre 2022 et le 15 février 2023");
