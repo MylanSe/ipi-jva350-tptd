@@ -34,9 +34,10 @@ public class SalarieAideADomicileServiceMockTest {
                 9, 2.5,
                 80, 20, 8);
         // When :
-        salarieService.ajouteConge(monSalarie, LocalDate.of(2024, 12, 17),
-                LocalDate.of(2024, 12, 18));
-        // Then :
+        salarieService.ajouteConge(monSalarie, LocalDate.of(2023, 12, 17),
+                LocalDate.of(2024, 12, 18)); //la date de fin est bien trop éloignée de la date de début, le salarié ne peut pas prendre l'équivalent d'un an de conges
+                //pour que la valeur expected soit atteinte, il faudrait que la date de début et la date de fin de congé soit la même, ou que la date augmente en même temps que la valeur expected, sans dépasser la limite de l'entreprise
+                // Then :
         ArgumentCaptor<SalarieAideADomicile> salarieAideADomicileCaptor = ArgumentCaptor.forClass(SalarieAideADomicile.class);
         Mockito.verify(salarieAideADomicileRepository, Mockito.times(1)).save(salarieAideADomicileCaptor.capture()); // arg capture !
         Assertions.assertEquals(1L, salarieAideADomicileCaptor.getValue().getCongesPayesPrisAnneeNMoins1());

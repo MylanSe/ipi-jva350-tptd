@@ -110,6 +110,10 @@ public class SalarieAideADomicileService {
 
         LinkedHashSet<LocalDate> joursDecomptes = salarieAideADomicile
                 .calculeJoursDeCongeDecomptesPourPlage(jourDebut, jourFin);
+        System.out.println("jour debut = " + jourDebut);
+        System.out.println("jour fin = " + jourFin);
+        System.out.println("jour decompte = " + joursDecomptes.size());
+        
 
         if (joursDecomptes.size() == 0) {
             throw new SalarieException("Pas besoin de congés !");
@@ -142,7 +146,7 @@ public class SalarieAideADomicileService {
                 salarieAideADomicile.getCongesPayesAcquisAnneeNMoins1(),
                 salarieAideADomicile.getMoisDebutContrat(),
                 jourDebut, jourFin);
-        if (nbCongesPayesPrisDecomptesAnneeN < limiteEntreprise) {
+        if (nbCongesPayesPrisDecomptesAnneeN > limiteEntreprise) { //erreur dans le code, ici le salarie ne pouvait pas prendre moins de jours de congé que la limite de l'entreprise, alors que c'est censé être l'inverse
             throw new SalarieException("Conges Payes Pris Decomptes (" + nbCongesPayesPrisDecomptesAnneeN
                     + ") dépassent la limite des règles de l'entreprise : " + limiteEntreprise);
         }
