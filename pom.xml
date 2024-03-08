@@ -18,7 +18,7 @@
 		<java.version>11</java.version>
 
 		<!-- Sonar Cloud : -->
-		<sonar.organization>mdutoo-ipi</sonar.organization>
+		<sonar.organization>mylanse</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
