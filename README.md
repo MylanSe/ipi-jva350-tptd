@@ -58,6 +58,7 @@ https://git-scm.com/download/win ). Quelques liens :
 - Rédigez **ci-dessous** une courte analyse du premier rapport produit par Sonar (métriques, état général...) :
 
 Le premier rapport Sonar indique...
+Il y a 1 bug, 0 vulnérabilité, 100% des hotspots ont été review, il y a 34 code smells et 3,5% de duplications. 
 
 
 ### Tests unitaires
